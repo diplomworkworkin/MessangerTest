@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "MEoVGqiAUd8=",
+  "success": true,
+  "projectFilePath": "/home/ubuntu/MessangerTest/ClinicApp.Wpf/ClinicApp.Wpf.csproj",
+  "expectedPackageFiles": [
+    "/home/ubuntu/.nuget/packages/communitytoolkit.mvvm/8.4.0/communitytoolkit.mvvm.8.4.0.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.configuration/10.0.3/microsoft.extensions.configuration.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.3/microsoft.extensions.configuration.abstractions.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.configuration.binder/10.0.3/microsoft.extensions.configuration.binder.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.3/microsoft.extensions.dependencyinjection.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.3/microsoft.extensions.dependencyinjection.abstractions.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.logging/10.0.3/microsoft.extensions.logging.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.3/microsoft.extensions.logging.abstractions.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.logging.configuration/10.0.3/microsoft.extensions.logging.configuration.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.logging.console/10.0.3/microsoft.extensions.logging.console.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.options/10.0.3/microsoft.extensions.options.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.options.configurationextensions/10.0.3/microsoft.extensions.options.configurationextensions.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.extensions.primitives/10.0.3/microsoft.extensions.primitives.10.0.3.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/microsoft.windowsdesktop.app.ref/10.0.3/microsoft.windowsdesktop.app.ref.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
