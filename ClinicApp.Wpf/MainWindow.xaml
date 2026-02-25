@@ -46,104 +46,106 @@
 
     <materialDesign:DialogHost Identifier="RootDialog">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <!-- Layout for Logged In users -->
+            <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Sidebar -->
-            <Border Grid.Column="0" Background="{DynamicResource MaterialDesignCardBackground}" 
-                    BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,0,1,0"
-                    Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                <!-- Sidebar -->
+                <Border Grid.Column="0" Background="{DynamicResource MaterialDesignCardBackground}" 
+                        BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,0,1,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Margin="16,32">
-                        <materialDesign:PackIcon Kind="HospitalBuilding" Width="48" Height="48" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
-                        <TextBlock Text="ClinicApp" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,8,0,0"/>
-                        <TextBlock Text="{Binding CurrentUserFullName}" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0" Opacity="0.7"/>
-                    </StackPanel>
-                    
-                    <ScrollViewer Grid.Row="1">
-                        <StackPanel Margin="8">
-                            <ListBox Style="{StaticResource MaterialDesignNavigationListBox}">
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Dashboard">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="ViewDashboard" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Главная" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Patients"
-                                             Visibility="{Binding IsRegistrar, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="AccountGroup" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Пациенты" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Doctors"
-                                             Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="Doctor" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Врачи" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Schedule"
-                                             Visibility="{Binding IsRegistrar, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="CalendarClock" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Расписание" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Reports"
-                                             Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="FileChart" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Отчеты" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                                <ListBoxItem Selected="ListBoxItem_Selected" Tag="Settings"
-                                             Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="Settings" Margin="0,0,16,0" VerticalAlignment="Center"/>
-                                        <TextBlock Text="Настройки" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-                            </ListBox>
+                        <StackPanel Grid.Row="0" Margin="16,32">
+                            <materialDesign:PackIcon Kind="HospitalBuilding" Width="48" Height="48" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                            <TextBlock Text="ClinicApp" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+                            <TextBlock Text="{Binding CurrentUserFullName}" FontSize="14" HorizontalAlignment="Center" Margin="0,4,0,0" Opacity="0.7"/>
                         </StackPanel>
-                    </ScrollViewer>
+                        
+                        <ScrollViewer Grid.Row="1">
+                            <StackPanel Margin="8">
+                                <ListBox Style="{StaticResource MaterialDesignNavigationListBox}">
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Dashboard">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="ViewDashboard" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Главная" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Patients"
+                                                 Visibility="{Binding IsRegistrar, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="AccountGroup" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Пациенты" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Doctors"
+                                                 Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Doctor" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Врачи" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Schedule"
+                                                 Visibility="{Binding IsRegistrar, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="CalendarClock" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Расписание" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Reports"
+                                                 Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="FileChart" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Отчеты" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem Selected="ListBoxItem_Selected" Tag="Settings"
+                                                 Visibility="{Binding IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Settings" Margin="0,0,16,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Настройки" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                </ListBox>
+                            </StackPanel>
+                        </ScrollViewer>
 
-                    <Button Grid.Row="2" Style="{StaticResource MaterialDesignFlatButton}"
-                            Command="{Binding LogoutCommand}" 
-                            Margin="16" Content="ВЫХОД" Foreground="Red"/>
+                        <Button Grid.Row="2" Style="{StaticResource MaterialDesignFlatButton}"
+                                Command="{Binding LogoutCommand}" 
+                                Margin="16" Content="ВЫХОД" Foreground="Red"/>
+                    </Grid>
+                </Border>
+
+                <!-- Main Content Area -->
+                <Grid Grid.Column="1">
+                    <ContentControl Content="{Binding Navigation.CurrentView}">
+                        <ContentControl.Style>
+                            <Style TargetType="ContentControl">
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                                 From="0" To="1" Duration="0:0:0.4"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ContentControl.Style>
+                    </ContentControl>
                 </Grid>
-            </Border>
-
-            <!-- Main Content Area -->
-            <Grid Grid.Column="1">
-                <ContentControl Content="{Binding Navigation.CurrentView}">
-                    <ContentControl.Style>
-                        <Style TargetType="ContentControl">
-                            <Style.Triggers>
-                                <EventTrigger RoutedEvent="Binding.TargetUpdated">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                                             From="0" To="1" Duration="0:0:0.4"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ContentControl.Style>
-                </ContentControl>
             </Grid>
-            
-            <!-- Full screen Login -->
-            <ContentControl Grid.ColumnSpan="2" Content="{Binding Navigation.CurrentView}"
+
+            <!-- Full screen content for Splash and Login -->
+            <ContentControl Content="{Binding Navigation.CurrentView}"
                             Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
         </Grid>
     </materialDesign:DialogHost>
