@@ -38,12 +38,14 @@ public partial class App : System.Windows.Application
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddScoped<IPatientRepository, PatientRepository>();
         services.AddScoped<IDoctorRepository, DoctorRepository>();
+        services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
         // ViewModels
         services.AddSingleton<MainViewModel>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<PatientsViewModel>();
         services.AddTransient<DoctorsViewModel>();
+        services.AddTransient<ScheduleViewModel>();
         services.AddTransient<SettingsViewModel>();
 
         // Windows

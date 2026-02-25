@@ -11,6 +11,7 @@ public class ClinicDbContext : DbContext
 
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<Doctor> Doctors => Set<Doctor>();
+    public DbSet<Appointment> Appointments => Set<Appointment>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -31,6 +32,24 @@ public class ClinicDbContext : DbContext
             entity.Property(e => e.LastName).IsRequired().HasMaxLength(100);
             entity.Property(e => e.Specialty).IsRequired().HasMaxLength(100);
             entity.Property(e => e.Phone).IsRequired().HasMaxLength(20);
+        });
+
+        modelBuilder.Entity<Appointment>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.StartTime).IsRequired();
+            entity.Property(e => e.EndTime).IsRequired();
+            entity.Property(e => e.Notes).HasMaxLength(500);
+            
+            entity.HasOne(a => a.Patient)
+                  .WithMany()
+                  .HasForeignKey(a => a.PatientId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(a => a.Doctor)
+                  .WithMany()
+                  .HasForeignKey(a => a.DoctorId)
+                  .OnDelete(DeleteBehavior.Cascade);
         });
     }
 }
