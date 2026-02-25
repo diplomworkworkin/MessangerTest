@@ -183,3 +183,16 @@
 /home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/MaterialDesignColors.dll
 /home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/MaterialDesignThemes.Wpf.dll
 /home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/Microsoft.Xaml.Behaviors.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/obj/Debug/net10.0-windows/ClinicApp.Wpf_Content.g.cs
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/LottieSharp.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/SkiaSharp.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/SkiaSharp.SceneGraph.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/SkiaSharp.Skottie.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/SkiaSharp.Views.Desktop.Common.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/SkiaSharp.Views.WPF.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/runtimes/osx/native/libSkiaSharp.dylib
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/runtimes/win-arm64/native/libSkiaSharp.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/runtimes/win-x64/native/libSkiaSharp.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/bin/Debug/net10.0-windows/runtimes/win-x86/native/libSkiaSharp.dll
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/obj/Debug/net10.0-windows/Views/SplashView.baml
+/home/ubuntu/MessangerTest/ClinicApp.Wpf/obj/Debug/net10.0-windows/Views/SplashView.g.cs

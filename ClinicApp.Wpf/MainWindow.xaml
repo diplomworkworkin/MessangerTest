@@ -18,6 +18,9 @@
         FontFamily="{materialDesign:MaterialDesignFont}">
 
     <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:SplashViewModel}">
+            <views:SplashView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:LoginViewModel}">
             <views:LoginView/>
         </DataTemplate>

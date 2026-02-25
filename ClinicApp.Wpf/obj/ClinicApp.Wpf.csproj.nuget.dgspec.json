@@ -1086,6 +1086,10 @@
               "target": "Package",
               "version": "[8.4.0, )"
             },
+            "LottieSharp": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "MaterialDesignColors": {
               "target": "Package",
               "version": "[5.2.1, )"

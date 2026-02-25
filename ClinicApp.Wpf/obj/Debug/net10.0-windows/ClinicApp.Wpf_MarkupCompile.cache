@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 /home/ubuntu/MessangerTest/ClinicApp.Wpf/App.xaml
-8349876384
-
-171048481093
-248881015905
-MainWindow.xaml;Views/DashboardView.xaml;Views/DoctorsView.xaml;Views/LoginView.xaml;Views/PatientsView.xaml;Views/ReportsView.xaml;Views/ScheduleView.xaml;Views/SettingsView.xaml;
+9-1439009115
+1559508904
+18571416728
+254-900930813
+MainWindow.xaml;Views/DashboardView.xaml;Views/DoctorsView.xaml;Views/LoginView.xaml;Views/PatientsView.xaml;Views/ReportsView.xaml;Views/ScheduleView.xaml;Views/SettingsView.xaml;Views/SplashView.xaml;
 
 False
 

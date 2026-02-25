@@ -30,9 +30,12 @@ public partial class MainViewModel : ObservableObject
         // Подписываемся на изменения навигации для обновления состояния авторизации
         _navigation.Navigated += OnNavigated;
         
-        // По умолчанию открываем Login
-        NavigateToLogin();
+        // По умолчанию открываем Splash
+        NavigateToSplash();
     }
+
+    [RelayCommand]
+    public void NavigateToSplash() => Navigation.NavigateTo<SplashViewModel>();
 
     private void OnNavigated(object? sender, Type viewModelType)
     {

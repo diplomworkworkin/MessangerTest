@@ -4,12 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lottie="clr-namespace:LottieSharp.WPF;assembly=LottieSharp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{DynamicResource MaterialDesignPaper}">
         <materialDesign:Card Width="380" Padding="32" VerticalAlignment="Center" HorizontalAlignment="Center" UniformCornerRadius="12">
             <StackPanel>
-                <materialDesign:PackIcon Kind="HospitalBuilding" Width="64" Height="64" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}" Margin="0,0,0,16"/>
+                <lottie:LottieAnimationView FileName="Assets/loading.json" 
+                                          AutoPlay="True" 
+                                          RepeatCount="-1"
+                                          Width="120" Height="120" 
+                                          HorizontalAlignment="Center" 
+                                          Margin="0,0,0,16"/>
                 
                 <TextBlock Text="ClinicApp" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8"/>
                 <TextBlock Text="Вход в систему" FontSize="16" Opacity="0.6" HorizontalAlignment="Center" Margin="0,0,0,32"/>

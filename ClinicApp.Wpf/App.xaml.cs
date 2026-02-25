@@ -44,6 +44,7 @@ public partial class App : System.Windows.Application
 
         // ViewModels
         services.AddSingleton<MainViewModel>();
+        services.AddTransient<SplashViewModel>();
         services.AddTransient<LoginViewModel>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<PatientsViewModel>();
