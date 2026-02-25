@@ -2,6 +2,8 @@ using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using ClinicApp.Wpf.ViewModels;
 using ClinicApp.Wpf.Services;
+using ClinicApp.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicApp.Wpf;
 
@@ -24,6 +26,11 @@ public partial class App : Application
 
     private void ConfigureServices(IServiceCollection services)
     {
+        // Database
+        var connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=ClinicDb;Trusted_Connection=True;MultipleActiveResultSets=true";
+        services.AddDbContext<ClinicDbContext>(options =>
+            options.UseSqlServer(connectionString));
+
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
 
