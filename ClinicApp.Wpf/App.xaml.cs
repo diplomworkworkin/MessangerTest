@@ -1,6 +1,7 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using ClinicApp.Wpf.ViewModels;
+using ClinicApp.Wpf.Services;
 
 namespace ClinicApp.Wpf;
 
@@ -23,8 +24,17 @@ public partial class App : Application
 
     private void ConfigureServices(IServiceCollection services)
     {
-        services.AddTransient<MainViewModel>();
-        services.AddTransient<MainWindow>(s => new MainWindow
+        // Services
+        services.AddSingleton<INavigationService, NavigationService>();
+
+        // ViewModels
+        services.AddSingleton<MainViewModel>();
+        services.AddTransient<DashboardViewModel>();
+        services.AddTransient<PatientsViewModel>();
+        services.AddTransient<SettingsViewModel>();
+
+        // Windows
+        services.AddSingleton<MainWindow>(s => new MainWindow
         {
             DataContext = s.GetRequiredService<MainViewModel>()
         });
