@@ -46,7 +46,7 @@
 
     <materialDesign:DialogHost Identifier="RootDialog">
         <Grid>
-            <!-- Layout for Logged In users -->
+            <!-- Основной интерфейс (когда залогинен) -->
             <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="240"/>
@@ -123,30 +123,16 @@
                     </Grid>
                 </Border>
 
-                <!-- Main Content Area -->
+                <!-- Область контента -->
                 <Grid Grid.Column="1">
-                    <ContentControl Content="{Binding Navigation.CurrentView}">
-                        <ContentControl.Style>
-                            <Style TargetType="ContentControl">
-                                <Style.Triggers>
-                                    <EventTrigger RoutedEvent="Binding.TargetUpdated">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                                                 From="0" To="1" Duration="0:0:0.4"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ContentControl.Style>
-                    </ContentControl>
+                    <ContentControl Content="{Binding Navigation.CurrentView, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </Grid>
 
-            <!-- Full screen content for Splash and Login -->
-            <ContentControl Content="{Binding Navigation.CurrentView}"
-                            Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
+            <!-- Экраны Splash и Login (когда НЕ залогинен) -->
+            <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding Navigation.CurrentView, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
         </Grid>
     </materialDesign:DialogHost>
 </Window>

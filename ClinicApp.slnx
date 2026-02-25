@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="ClinicApp.Tests/ClinicApp.Tests.csproj" />
-  <Project Path="ClinicApp.Wpf/ClinicApp.Wpf.csproj" />
-</Solution>
