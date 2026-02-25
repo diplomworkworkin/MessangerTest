@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClinicApp.Infrastructure\ClinicApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\ClinicApp.Domain\ClinicApp.Domain.csproj" />
+    <ProjectReference Include="..\ClinicApp.Application\ClinicApp.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "ClinicApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ClinicApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClinicApp.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ClinicApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ClinicApp.Domain/ClinicApp.Domain.csproj",
+      "msbuildProject": "../ClinicApp.Domain/ClinicApp.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "ClinicApp.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/home/ubuntu/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/ubuntu/MessangerTest/ClinicApp.Domain/ClinicApp.Domain.csproj": {
+              "projectPath": "/home/ubuntu/MessangerTest/ClinicApp.Domain/ClinicApp.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

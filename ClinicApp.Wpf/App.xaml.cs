@@ -3,11 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 using ClinicApp.Wpf.ViewModels;
 using ClinicApp.Wpf.Services;
 using ClinicApp.Infrastructure.Data;
+using ClinicApp.Infrastructure.Data.Repositories;
+using ClinicApp.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClinicApp.Wpf;
 
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     public static IServiceProvider? ServiceProvider { get; private set; }
 
@@ -33,6 +35,7 @@ public partial class App : Application
 
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
+        services.AddScoped<IPatientRepository, PatientRepository>();
 
         // ViewModels
         services.AddSingleton<MainViewModel>();

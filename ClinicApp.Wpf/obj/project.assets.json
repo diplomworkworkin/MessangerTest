@@ -1262,10 +1262,35 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "ClinicApp.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "ClinicApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ClinicApp.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClinicApp.Application.dll": {}
+        }
+      },
+      "ClinicApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ClinicApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClinicApp.Domain.dll": {}
+        }
+      },
       "ClinicApp.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "ClinicApp.Application": "1.0.0",
+          "ClinicApp.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.3"
         },
         "compile": {
@@ -3699,6 +3724,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ClinicApp.Application/1.0.0": {
+      "type": "project",
+      "path": "../ClinicApp.Application/ClinicApp.Application.csproj",
+      "msbuildProject": "../ClinicApp.Application/ClinicApp.Application.csproj"
+    },
+    "ClinicApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ClinicApp.Domain/ClinicApp.Domain.csproj",
+      "msbuildProject": "../ClinicApp.Domain/ClinicApp.Domain.csproj"
+    },
     "ClinicApp.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../ClinicApp.Infrastructure/ClinicApp.Infrastructure.csproj",
@@ -3707,6 +3742,8 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-windows7.0": [
+      "ClinicApp.Application >= 1.0.0",
+      "ClinicApp.Domain >= 1.0.0",
       "ClinicApp.Infrastructure >= 1.0.0",
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.3",
@@ -3740,6 +3777,12 @@
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {
+            "/home/ubuntu/MessangerTest/ClinicApp.Application/ClinicApp.Application.csproj": {
+              "projectPath": "/home/ubuntu/MessangerTest/ClinicApp.Application/ClinicApp.Application.csproj"
+            },
+            "/home/ubuntu/MessangerTest/ClinicApp.Domain/ClinicApp.Domain.csproj": {
+              "projectPath": "/home/ubuntu/MessangerTest/ClinicApp.Domain/ClinicApp.Domain.csproj"
+            },
             "/home/ubuntu/MessangerTest/ClinicApp.Infrastructure/ClinicApp.Infrastructure.csproj": {
               "projectPath": "/home/ubuntu/MessangerTest/ClinicApp.Infrastructure/ClinicApp.Infrastructure.csproj"
             }

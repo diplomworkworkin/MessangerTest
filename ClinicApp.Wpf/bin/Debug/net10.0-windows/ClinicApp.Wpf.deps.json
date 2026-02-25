@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "ClinicApp.Wpf/1.0.0": {
         "dependencies": {
+          "ClinicApp.Application": "1.0.0",
+          "ClinicApp.Domain": "1.0.0",
           "ClinicApp.Infrastructure": "1.0.0",
           "CommunityToolkit.Mvvm": "8.4.0",
           "Microsoft.EntityFrameworkCore.Design": "10.0.3",
@@ -916,8 +918,29 @@
           }
         }
       },
+      "ClinicApp.Application/1.0.0": {
+        "dependencies": {
+          "ClinicApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ClinicApp.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ClinicApp.Domain/1.0.0": {
+        "runtime": {
+          "ClinicApp.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ClinicApp.Infrastructure/1.0.0": {
         "dependencies": {
+          "ClinicApp.Application": "1.0.0",
+          "ClinicApp.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.3"
         },
         "runtime": {
@@ -1319,6 +1342,16 @@
       "sha512": "sha512-BVYuec3jV23EMRDeR7Dr1/qhx7369dZzJ9IWy2xylvb4YfXsrUxspWc4UWYid/tj4zZK58uGZqn2WQiaDMhmAg==",
       "path": "system.memory.data/8.0.1",
       "hashPath": "system.memory.data.8.0.1.nupkg.sha512"
+    },
+    "ClinicApp.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClinicApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ClinicApp.Infrastructure/1.0.0": {
       "type": "project",

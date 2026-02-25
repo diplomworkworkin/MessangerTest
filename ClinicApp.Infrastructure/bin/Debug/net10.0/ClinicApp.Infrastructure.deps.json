@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "ClinicApp.Infrastructure/1.0.0": {
         "dependencies": {
+          "ClinicApp.Application": "1.0.0",
+          "ClinicApp.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "10.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.3"
         },
@@ -903,6 +905,25 @@
             "fileVersion": "9.0.425.16305"
           }
         }
+      },
+      "ClinicApp.Application/1.0.0": {
+        "dependencies": {
+          "ClinicApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ClinicApp.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ClinicApp.Domain/1.0.0": {
+        "runtime": {
+          "ClinicApp.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1289,6 +1310,16 @@
       "sha512": "sha512-o94k2RKuAce3GeDMlUvIXlhVa1kWpJw95E6C9LwW0KlG0nj5+SgCiIxJ2Eroqb9sLtG1mEMbFttZIBZ13EJPvQ==",
       "path": "system.security.cryptography.protecteddata/9.0.4",
       "hashPath": "system.security.cryptography.protecteddata.9.0.4.nupkg.sha512"
+    },
+    "ClinicApp.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClinicApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
