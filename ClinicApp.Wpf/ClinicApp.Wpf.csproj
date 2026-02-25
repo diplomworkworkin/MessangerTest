@@ -30,7 +30,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\**\*.json" />
+    <None Update="Assets\**\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
