@@ -74,5 +74,8 @@ public partial class MainViewModel : ObservableObject
     public void NavigateToSchedule() => Navigation.NavigateTo<ScheduleViewModel>();
 
     [RelayCommand]
+    public void NavigateToReports() => Navigation.NavigateTo<ReportsViewModel>();
+
+    [RelayCommand]
     public void NavigateToSettings() => Navigation.NavigateTo<SettingsViewModel>();
 }

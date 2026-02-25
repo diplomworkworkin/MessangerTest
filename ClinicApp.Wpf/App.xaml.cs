@@ -37,6 +37,7 @@ public partial class App : System.Windows.Application
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<IAuthService, AuthService>();
+        services.AddSingleton<IReportService, ReportService>();
         services.AddScoped<IPatientRepository, PatientRepository>();
         services.AddScoped<IDoctorRepository, DoctorRepository>();
         services.AddScoped<IAppointmentRepository, AppointmentRepository>();
@@ -48,6 +49,7 @@ public partial class App : System.Windows.Application
         services.AddTransient<PatientsViewModel>();
         services.AddTransient<DoctorsViewModel>();
         services.AddTransient<ScheduleViewModel>();
+        services.AddTransient<ReportsViewModel>();
         services.AddTransient<SettingsViewModel>();
 
         // Windows
