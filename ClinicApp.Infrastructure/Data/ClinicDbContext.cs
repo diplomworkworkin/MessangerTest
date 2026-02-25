@@ -12,6 +12,7 @@ public class ClinicDbContext : DbContext
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<Doctor> Doctors => Set<Doctor>();
     public DbSet<Appointment> Appointments => Set<Appointment>();
+    public DbSet<User> Users => Set<User>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -50,6 +51,21 @@ public class ClinicDbContext : DbContext
                   .WithMany()
                   .HasForeignKey(a => a.DoctorId)
                   .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Username).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.PasswordHash).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.FullName).HasMaxLength(100);
+            
+            // Seed data
+            entity.HasData(
+                new User { Id = 1, Username = "admin", PasswordHash = "admin", Role = UserRole.Admin, FullName = "Администратор" },
+                new User { Id = 2, Username = "registrar", PasswordHash = "registrar", Role = UserRole.Registrar, FullName = "Регистратор" },
+                new User { Id = 3, Username = "doctor", PasswordHash = "doctor", Role = UserRole.Doctor, FullName = "Врач" }
+            );
         });
     }
 }

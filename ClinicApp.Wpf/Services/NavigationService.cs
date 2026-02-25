@@ -10,6 +10,8 @@ public partial class NavigationService : ObservableObject, INavigationService
     [ObservableProperty]
     private ObservableObject? _currentView;
 
+    public event EventHandler<Type>? Navigated;
+
     public NavigationService(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
@@ -19,5 +21,6 @@ public partial class NavigationService : ObservableObject, INavigationService
     {
         var viewModel = _serviceProvider.GetRequiredService<T>();
         CurrentView = viewModel;
+        Navigated?.Invoke(this, typeof(T));
     }
 }
