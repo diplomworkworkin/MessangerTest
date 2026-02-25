@@ -1,23 +1,30 @@
-﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ClinicApp.Wpf.ViewModels;
 
 namespace ClinicApp.Wpf;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
 public partial class MainWindow : Window
 {
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+    {
+        if (sender is ListBoxItem item && DataContext is MainViewModel viewModel)
+        {
+            var tag = item.Tag?.ToString();
+            switch (tag)
+            {
+                case "Dashboard": viewModel.NavigateToDashboardCommand.Execute(null); break;
+                case "Patients": viewModel.NavigateToPatientsCommand.Execute(null); break;
+                case "Doctors": viewModel.NavigateToDoctorsCommand.Execute(null); break;
+                case "Schedule": viewModel.NavigateToScheduleCommand.Execute(null); break;
+                case "Reports": viewModel.NavigateToReportsCommand.Execute(null); break;
+                case "Settings": viewModel.NavigateToSettingsCommand.Execute(null); break;
+            }
+        }
     }
 }
