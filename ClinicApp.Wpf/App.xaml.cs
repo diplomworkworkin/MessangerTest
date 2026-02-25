@@ -5,6 +5,7 @@ using ClinicApp.Wpf.Services;
 using ClinicApp.Infrastructure.Data;
 using ClinicApp.Infrastructure.Data.Repositories;
 using ClinicApp.Application.Interfaces;
+using ClinicApp.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClinicApp.Wpf;
@@ -36,11 +37,13 @@ public partial class App : System.Windows.Application
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddScoped<IPatientRepository, PatientRepository>();
+        services.AddScoped<IDoctorRepository, DoctorRepository>();
 
         // ViewModels
         services.AddSingleton<MainViewModel>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<PatientsViewModel>();
+        services.AddTransient<DoctorsViewModel>();
         services.AddTransient<SettingsViewModel>();
 
         // Windows

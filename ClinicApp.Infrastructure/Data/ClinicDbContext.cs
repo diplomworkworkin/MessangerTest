@@ -10,6 +10,7 @@ public class ClinicDbContext : DbContext
     }
 
     public DbSet<Patient> Patients => Set<Patient>();
+    public DbSet<Doctor> Doctors => Set<Doctor>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -20,6 +21,15 @@ public class ClinicDbContext : DbContext
             entity.HasKey(e => e.Id);
             entity.Property(e => e.FirstName).IsRequired().HasMaxLength(100);
             entity.Property(e => e.LastName).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Phone).IsRequired().HasMaxLength(20);
+        });
+
+        modelBuilder.Entity<Doctor>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.FirstName).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.LastName).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Specialty).IsRequired().HasMaxLength(100);
             entity.Property(e => e.Phone).IsRequired().HasMaxLength(20);
         });
     }

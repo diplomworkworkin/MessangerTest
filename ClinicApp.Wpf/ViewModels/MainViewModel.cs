@@ -24,5 +24,8 @@ public partial class MainViewModel : ObservableObject
     public void NavigateToPatients() => Navigation.NavigateTo<PatientsViewModel>();
 
     [RelayCommand]
+    public void NavigateToDoctors() => Navigation.NavigateTo<DoctorsViewModel>();
+
+    [RelayCommand]
     public void NavigateToSettings() => Navigation.NavigateTo<SettingsViewModel>();
 }

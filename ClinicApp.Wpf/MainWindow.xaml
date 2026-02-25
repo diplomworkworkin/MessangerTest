@@ -16,6 +16,9 @@
         <DataTemplate DataType="{x:Type vm:PatientsViewModel}">
             <views:PatientsView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:DoctorsViewModel}">
+            <views:DoctorsView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
             <views:SettingsView/>
         </DataTemplate>
@@ -37,6 +40,9 @@
                         Margin="0,5" Padding="10"/>
                 <Button Content="Пациенты" 
                         Command="{Binding NavigateToPatientsCommand}" 
+                        Margin="0,5" Padding="10"/>
+                <Button Content="Врачи" 
+                        Command="{Binding NavigateToDoctorsCommand}" 
                         Margin="0,5" Padding="10"/>
                 <Button Content="Настройки" 
                         Command="{Binding NavigateToSettingsCommand}" 
