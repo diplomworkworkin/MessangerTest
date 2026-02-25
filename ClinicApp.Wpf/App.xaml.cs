@@ -21,6 +21,22 @@ public partial class App : System.Windows.Application
 
         ServiceProvider = serviceCollection.BuildServiceProvider();
 
+        // Принудительная инициализация базы данных при старте
+        try
+        {
+            using (var scope = ServiceProvider.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<ClinicDbContext>();
+                // Создает базу данных, если она не существует
+                dbContext.Database.EnsureCreated();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Ошибка инициализации базы данных: {ex.Message}\n\nУбедитесь, что LocalDB установлен и запущен.", 
+                            "Ошибка БД", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
         mainWindow.Show();
 
@@ -29,10 +45,14 @@ public partial class App : System.Windows.Application
 
     private void ConfigureServices(IServiceCollection services)
     {
-        // Database
+        // Database с логикой повторных попыток (EnableRetryOnFailure)
         var connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=ClinicDb;Trusted_Connection=True;MultipleActiveResultSets=true";
         services.AddDbContext<ClinicDbContext>(options =>
-            options.UseSqlServer(connectionString));
+            options.UseSqlServer(connectionString, sqlOptions => 
+                sqlOptions.EnableRetryOnFailure(
+                    maxRetryCount: 5,
+                    maxRetryDelay: TimeSpan.FromSeconds(10),
+                    errorNumbersToAdd: null)));
 
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
